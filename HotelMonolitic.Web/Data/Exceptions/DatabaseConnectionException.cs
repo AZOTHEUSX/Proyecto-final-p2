@@ -1,8 +1,8 @@
 ﻿using System;
 
-public class Class1
+public class DBconneection
 {
-	public Class1()
+	public DBconneection()
 	{
 	}
 }
