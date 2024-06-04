@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\.github",
+    "\\.github\\workflows",
+    "\\HotelMonolitic.Web",
+    "\\HotelMonolitic.Web\\Controllers",
+    "\\HotelMonolitic.Web\\Data",
+    "\\HotelMonolitic.Web\\Data\\Context",
+    "\\HotelMonolitic.Web\\Data\\Core"
+  ],
+  "PreviewInSolutionExplorer": true
+}
