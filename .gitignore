@@ -1,3 +1,7 @@
 # Environment
 /.vs/
 /HotelMonolitic.Web/.vs/
+/HotelMonolitic.Web/obj/
+/HotelMonolitic.Web/Properties/
+/HotelMonolitic.Web/HotelMonolitic.Web.csproj
+/HotelMonolitic.Web/HotelMonolitic.Web.sln
