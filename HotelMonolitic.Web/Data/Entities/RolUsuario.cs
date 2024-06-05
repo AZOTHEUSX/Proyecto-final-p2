@@ -1,8 +1,9 @@
 ﻿using System;
 
-public class Roldeusuario
+public class Roldeusuario : Repobase
 {
-	public Roldeusuario()
-	{
-	}
+    public int IdRolUsuario { get; set; }
+    public string Descripcion { get; set; }
+    public int Estado{ get; set; }
+    public DateTime FechaCreacion { get; set; }
 }

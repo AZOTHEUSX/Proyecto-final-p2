@@ -1,8 +1,9 @@
 ﻿using System;
 
-public class Estadohabitacion
+public class Estadohabitacion : Repobase
 {
-	public Estadohabitacion()
-	{
-	}
+    public int IdEstadoHabitacion { get; set; }
+    public string Descripcion { get; set; }
+    public int Estado { get; set; }
+    public DateTime FechaCreacion { get; set; }
 }
