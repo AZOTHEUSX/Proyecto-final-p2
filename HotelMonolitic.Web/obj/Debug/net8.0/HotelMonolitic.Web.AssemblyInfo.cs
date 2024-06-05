@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HotelMonolitic.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1005cf55d3ca0756a5030f4786d1e57e14dd9857")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d487847b8823a7ec0413e861cc8d307ddcbde1ff")]
 [assembly: System.Reflection.AssemblyProductAttribute("HotelMonolitic.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HotelMonolitic.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
