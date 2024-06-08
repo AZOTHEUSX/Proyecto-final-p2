@@ -1,8 +1,22 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
+using System;
 
-public class HotelContext
+namespace HotelMonolitic.Web.Data.Context
 {
-	public HotelContext()
-	{
-	}
+    public class HotelContext : DbContext
+    {
+        public HotelContext(DbContextOptions options) : base(options)
+
+#region "Db Sets"
+public DbSet<Categoria> Categoria { get; set; }
+        public DbSet<Cliente> Cliente { get; set; }
+        public DbSet<Estadohabitacion> EstadoHabitacion { get; set; }
+        public DbSet<Habitacion> Habitacion { get; set; }
+        public DbSet<Piso> PISO { get; set; }
+        public DbSet<Recepcion> RECEPCION { get; set; }
+        public DbSet<Roldeusuario> RolUsuario { get; set; }
+        public DbSet<Usuario> Usuario { get; set; }
+        #endregion
+    }
 }
