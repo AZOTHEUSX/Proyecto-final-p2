@@ -1,8 +1,8 @@
-﻿using System;
-
-public class Estadohabitacion
+﻿namespace HotelMonolitic.Web.Data.Entities
 {
-	public Estadohabitacion()
-	{
-	}
+    public class EstadoHabitacion
+    {
+        public int Id { get; set; }
+        public string Estado { get; set; }
+    }
 }
