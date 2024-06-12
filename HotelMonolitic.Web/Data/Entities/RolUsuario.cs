@@ -1,8 +1,8 @@
-﻿using System;
-
-public class Roldeusuario
+﻿namespace HotelMonolitic.Web.Data.Entities
 {
-	public Roldeusuario()
-	{
-	}
+    public class RolUsuario
+    {
+        public int Id { get; set; }
+        public string Nombre { get; set; }
+    }
 }
