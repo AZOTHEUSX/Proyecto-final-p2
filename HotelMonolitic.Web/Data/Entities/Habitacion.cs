@@ -11,8 +11,7 @@ namespace HotelMonolitic.Web.Data.Entities
         public int IdEstadoHabitacion { get; set; }
         public int IdPiso { get; set; }
         public int IdCategoria { get; set; }
-        public string Estado { get; set; }
-        public DateTime FechaCreacion { set; get; }
+       
 
     }
 }

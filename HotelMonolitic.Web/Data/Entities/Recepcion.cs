@@ -17,7 +17,7 @@ namespace HotelMonolitic.Web.Data.Entities
         public int TotalPagado { get; set; }
         public int CostoPenalidad { get; set; }
         public string? Observacion { get; set; }
-        public string Estado {  get; set; }
+        
 
     }
 }
