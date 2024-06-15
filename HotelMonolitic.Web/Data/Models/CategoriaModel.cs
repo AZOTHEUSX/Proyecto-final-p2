@@ -1,9 +1,10 @@
 namespace HotelMonolitic.Web.Data.Models
 {
-    public class CategoriaModel : ICategoria
+    public class CategoriaUpdateModel
     {
-        public int CategoriaId { get; set; }
-        public string Nombre { get; set; }
+        public int IdCategoria { get; set; }
         public string Descripcion { get; set; }
+        public string Estado { get; set; }
+        public DateTime FechaCreacion { get; set; }
     }
 }

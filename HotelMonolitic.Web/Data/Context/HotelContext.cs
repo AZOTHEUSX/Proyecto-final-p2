@@ -13,6 +13,8 @@ namespace HotelMonolitic.Web.Data.Context
         
         }
         #endregion
+        
+        
         #region "Db Sets"
         public DbSet<Categoria> Categoria { get; set; }
         public DbSet<Cliente> Cliente { get; set; }

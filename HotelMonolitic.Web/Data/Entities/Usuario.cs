@@ -9,8 +9,6 @@ namespace HotelMonolitic.Web.Data.Entities
         public string Correo { get; set; }
         public int IdRolUsuario { get; set; }
         public string Clave { get; set; }
-        public string Estado { get; set; }
-        public DateTime FechaCreacion { get; set; }
        
     }
 }
