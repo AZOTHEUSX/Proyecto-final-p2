@@ -1,8 +1,13 @@
-﻿namespace HotelMonolitic.Web.Data.Entities
+﻿using HotelMonolitic.Web.Data.Core;
+
+namespace HotelMonolitic.Web.Data.Entities
 {
-    public class EstadoHabitacion
+    public class EstadoHabitacion : BaseEntity
     {
-        public int Id { get; set; }
-        public string Estado { get; set; }
+        public int IdEstadoHabitacion { get; set; }
+        public string Descripcion { get; set; }
+        public string Estado { get; set; } 
+        public DateTime FechaCreacion { get; set; }
+
     }
 }

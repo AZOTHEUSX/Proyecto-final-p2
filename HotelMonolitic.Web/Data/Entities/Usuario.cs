@@ -1,11 +1,16 @@
-﻿namespace HotelMonolitic.Web.Data.Entities
+﻿using HotelMonolitic.Web.Data.Core;
+
+namespace HotelMonolitic.Web.Data.Entities
 {
-    public class Usuario
+    public class Usuario : BaseEntity
     {
-        public int Id { get; set; }
-        public string NombreUsuario { get; set; }
-        public string Contrasena { get; set; }
-        public int RolUsuarioId { get; set; }
-        public RolUsuario RolUsuario { get; set; }
+        public int IdUsuario { get; set; }
+        public string NombreCompleto { get; set; }
+        public string Correo { get; set; }
+        public int IdRolUsuario { get; set; }
+        public string Clave { get; set; }
+        public string Estado { get; set; }
+        public DateTime FechaCreacion { get; set; }
+       
     }
 }
