@@ -1,6 +1,7 @@
 ﻿namespace HotelMonolitic.Web.Data.Models.EstadoHabitacionCRUD
 {
-    public class Class
+    public class EstadoHabitacionSaveModel : EstadoHabitacionBaseModel
     {
+      
     }
 }
