@@ -2,8 +2,7 @@
 {
     public abstract class ModelBase
     {
-        public int ChangeUser { get; set; }
-        public DateTime ChangeDate { get; set; }
-        
+        public bool? CambiarEstado { get; set; }
+        public DateTime? CambiarFechaCreacion { get; set; }
     }
 }

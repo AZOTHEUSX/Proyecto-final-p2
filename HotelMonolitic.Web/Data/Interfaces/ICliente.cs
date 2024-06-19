@@ -1,8 +1,13 @@
-﻿using System;
+﻿using HotelMonolitic.Web.Data.Models.ClienteCRUD;
 
-public class InterClientes
+namespace HotelMonolitic.Web.Data.Interfaces
 {
-	public InterClientes()
+	public interface ICliente
 	{
+		List<ClienteGetModel> GetClientes();
+		void UpdateCliente(ClienteUpdateModel updateModel);
+		void SaveCliente(ClienteSaveModel saveModel);
+		void RemoveCliente(ClienteRemoveModel removeModel);
+		ClienteGetModel GetCliente(int idCliente);
 	}
 }
