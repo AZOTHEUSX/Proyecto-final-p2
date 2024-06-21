@@ -1,8 +1,22 @@
-﻿using System;
+﻿using HotelMonolitic.Web.Data.Models.EstadoHabitacionCRUD;
+using System;
 
-public class Class1
-{
-	public Class1()
-	{
-	}
-}
+//namespace HotelMonolitic.BL.Services
+//{
+	//public class EstadoHabitacionServices : IEstadoHabitacionDb
+	//{
+		//private readonly IEstadoHabitacionDb estadoHabitacionDb;
+
+		//public EstadoHabitacionServices(IEstadoHabitacionDb estadoHabitacionDb)
+		//{
+			//this.estadoHabitacionDb = estadoHabitacionDb;
+
+		//}
+
+		//public List<EstadoHabitacionBaseModel> GetEstadoHabitacion()
+		//{
+		//return this.estadoHabitacionDb.GetEstadoHabitacion();
+		//}
+	//}
+
+//}

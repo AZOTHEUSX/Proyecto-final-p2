@@ -1,4 +1,6 @@
 ﻿using HotelMonolitic.Web.Data.Context;
+using HotelMonolitic.Web.Data.DbObjects;
+using HotelMonolitic.Web.Data.Models.EstadoHabitacionCRUD;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Identity.Client;
@@ -7,24 +9,27 @@ namespace HotelMonolitic.Web.Controllers
 {
     public class EstadoHabitacionController : Controller
     {
-        private readonly HotelContext context;
+        private readonly IEstadoHabitacionDb EstadoHabitacionServices;
         
-        public EstadoHabitacionController(HotelContext context)
+        public EstadoHabitacionController(IEstadoHabitacionDb estadoHabitacionDb)
         {
-            this.context =context;
+            this.EstadoHabitacionServices = estadoHabitacionDb;
+
         }
 
         
         // GET: EstadoHabitacionController
         public ActionResult Index()
         {
-            return View();
+            var estadohabitaciones = this.EstadoHabitacionServices.GetEstadoHabitacion();
+            return View(estadohabitaciones);
         }
 
         // GET: EstadoHabitacionController/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var esthab = this.EstadoHabitacionServices.GetEstadoHabitacion(id);
+            return View(esthab);
         }
 
         // GET: EstadoHabitacionController/Create
@@ -36,12 +41,16 @@ namespace HotelMonolitic.Web.Controllers
         // POST: EstadoHabitacionController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(EstadoHabitacionSaveModel estadoHabitacionSave)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                estadoHabitacionSave.ChangeDate = DateTime.Now;
+                estadoHabitacionSave.ChangeUser = true;
+                this.EstadoHabitacionServices.SaveEstadoHabitacion(estadoHabitacionSave);
+                return RedirectToAction (nameof(Index));
             }
+
             catch
             {
                 return View();
@@ -51,16 +60,19 @@ namespace HotelMonolitic.Web.Controllers
         // GET: EstadoHabitacionController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var esthab = this.EstadoHabitacionServices.GetEstadoHabitacion(id);
+
+            return View(esthab);
         }
 
         // POST: EstadoHabitacionController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(EstadoHabitacionUpdateModel estadoHabitacionUpdate)
         {
             try
             {
+                this.EstadoHabitacionServices.UpdateEstadoHabitacion(estadoHabitacionUpdate);
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -78,10 +90,11 @@ namespace HotelMonolitic.Web.Controllers
         // POST: EstadoHabitacionController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(EstadoHabitacionRemoveModel estadoHabitacionRemove)
         {
             try
             {
+                this.EstadoHabitacionServices.RemoveEstadoHabitacion(estadoHabitacionRemove);
                 return RedirectToAction(nameof(Index));
             }
             catch

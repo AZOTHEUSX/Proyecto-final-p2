@@ -1,8 +1,7 @@
-﻿using System;
+﻿using HotelMonolitic.Web.Data.Models.HabitacionCRUD;
+using System;
 
-public class Class1
+public interface IHabitacionServices
 {
-	public Class1()
-	{
-	}
+    List<HabitacionBaseModel> GetHabitacion();
 }

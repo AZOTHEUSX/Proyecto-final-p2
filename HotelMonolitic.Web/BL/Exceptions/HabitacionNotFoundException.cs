@@ -1,8 +1,8 @@
 ﻿using System;
 
-public class Class1
+public class HabitacionException
 {
-	public Class1()
+	public HabitacionException()
 	{
 	}
 }

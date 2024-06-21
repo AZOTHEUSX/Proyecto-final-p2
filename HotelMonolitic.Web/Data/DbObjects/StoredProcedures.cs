@@ -2,12 +2,13 @@
 using System.Data;
 using HotelMonolitic.Web.Data;
 using System;
+using Microsoft.EntityFrameworkCore;
 
 namespace HotelMonolitic.Web.Data.DbObjects
 {
     public class StoredProcedures
     {
-        public static int AddReception(ApplicationDbContext context, int clienteId, int habitacionId, DateTime fechaIngreso, DateTime fechaSalida)
+        public static int AddReception(DbContext context, int clienteId, int habitacionId, DateTime fechaIngreso, DateTime fechaSalida)
         {
             var command = context.Database.GetDbConnection().CreateCommand();
             command.CommandText = "usp_AddReception";
