@@ -20,7 +20,6 @@ namespace HotelMonolitic.Web.Data.Core
         public DateTime? DeletedDate { get; set; }
         public bool Deleted { get; set; }*/
         public bool Estado { get; set; }
-        public int IdCliente { get; set; }
 
     }
 }

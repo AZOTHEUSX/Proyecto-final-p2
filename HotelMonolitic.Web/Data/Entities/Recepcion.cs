@@ -8,6 +8,7 @@ namespace HotelMonolitic.Web.Data.Entities
     public class Recepcion : BaseEntity
     {
         [Key] public int IdRecepcion { get; set; }
+        public int IdCliente{ get; set; }
         public int IdHabitacion { get; set; }
         public DateTime FechaEntrada { get; set; }
         public DateTime FechaSalida { get; set; }
