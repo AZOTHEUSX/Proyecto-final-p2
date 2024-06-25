@@ -22,8 +22,8 @@ namespace HotelMonolitic.Web.Data.Context
         public DbSet<Habitacion> Habitacion { get; set; }
         public DbSet<Piso> PISO { get; set; }
         public DbSet<Recepcion> RECEPCION { get; set; }
-        public DbSet<RolUsuario> RolUsuario { get; set; }
-        public DbSet<Usuario> Usuario { get; set; }
+        public DbSet<RolUsuario> RolesUsuario { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
         #endregion
     }
 }
