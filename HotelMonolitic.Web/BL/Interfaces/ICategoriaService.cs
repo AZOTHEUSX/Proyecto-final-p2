@@ -1,8 +1,6 @@
-﻿using System;
-
-public class UsuarioService
+﻿namespace HotelMonolitic.Web.BL.Interfaces
 {
-	public UsuarioService()
-	{
-	}
+    public interface ICategoriaService
+    {
+    }
 }
