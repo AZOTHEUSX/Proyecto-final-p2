@@ -4,10 +4,10 @@ namespace HotelMonolitic.Web.Data.Interfaces
 {
 	public interface ICategoria
 	{
-		List<CategoriaGetModel> GetCategorias();
+        CategoriaGetModel GetCategoria(int idCategoria);
+        List<CategoriaGetModel> GetCategorias();
 		void UpdateCategoria(CategoriaUpdateModel updateModel);
 		void SaveCategoria(CategoriaSaveModel saveModel);
 		void RemoveCategoria(CategoriaRemoveModel removeModel);
-		CategoriaGetModel GetCategoria(int idCategoria);
 	}
 }

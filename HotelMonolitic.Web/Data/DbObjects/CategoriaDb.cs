@@ -21,16 +21,26 @@ namespace HotelMonolitic.Web.Data.DbObjects
 
             if (categoria is null)
             {
-                throw new CategoriaDBException($"No se encontró la categoría con el id { idCategoria }");
+                throw new CategoriaDBException($"No se encontró la categoría con el id {idCategoria}");
             }
 
-            CategoriaGetModel categoriaModel = new CategoriaGetModel() 
+            CategoriaGetModel categoriaModel = new CategoriaGetModel()
             {
                 IdCategoria = categoria.IdCategoria,
                 Descripcion = categoria.Descripcion,
-                Estado = categoria.Estado,
-                FechaCreacion = categoria.FechaCreacion,
+                CambiarEstado = categoria.CambiarEstado,
+                CambiarFechaCreacion = categoria.CambiarFechaCreacion,
             };
+        }
+
+        public List<CategoriaGetModel> GetCategorias()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RemoveCategoria(CategoriaRemoveModel removeModel)
+        {
+            throw new NotImplementedException();
         }
 
         public void SaveCategoria(CategoriaSaveModel categoriaSave)
@@ -39,20 +49,17 @@ namespace HotelMonolitic.Web.Data.DbObjects
             {
                 IdCategoria = categoriaSave.IdCategoria,
                 Descripcion = categoriaSave.Descripcion,
-                Estado = (bool)categoriaSave.CambiarEstado,
-                FechaCreacion = (DateTime)categoriaSave.CambiarFechaCreacion
+                CambiarEstado = categoriaSave.CambiarEstado,
+                CambiarFechaCreacion = categoriaSave.CambiarFechaCreacion
             };
 
             this.context.Categoria.Add(categoria);
             this.context.SaveChanges();
         }
 
-        //public void UpdateCategoria(CategoriaUpdateModel categoriaUpdate)
-        //{
-        //    Categoria categoriaToUpdate = this.context.Categoria.Find(updateModel);
-
-        // Continuar desarrollando...
-
-        //};
+        public void UpdateCategoria(CategoriaUpdateModel updateModel)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

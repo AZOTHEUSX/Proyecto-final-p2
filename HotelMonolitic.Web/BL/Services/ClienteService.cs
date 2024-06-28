@@ -1,8 +1,9 @@
-﻿using System;
+﻿using HotelMonolitic.Web.BL.Interfaces;
+using System;
 
-public class UsuarioService
+public class ClienteService : IClienteService
 {
-	public UsuarioService()
+	public ClienteService()
 	{
 	}
 }
