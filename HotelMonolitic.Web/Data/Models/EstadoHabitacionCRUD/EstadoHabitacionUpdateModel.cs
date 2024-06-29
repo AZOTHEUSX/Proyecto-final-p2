@@ -2,7 +2,7 @@
 {
     public class EstadoHabitacionUpdateModel : EstadoHabitacionBaseModel
     {
-        public int UserMod {  get; set; }   
+       //public bool? ChangeUser { get; set; }//
 
     }
 }

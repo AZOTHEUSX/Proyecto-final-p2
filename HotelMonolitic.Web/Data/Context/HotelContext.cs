@@ -10,7 +10,7 @@ namespace HotelMonolitic.Web.Data.Context
         #region "Constructor"
         public HotelContext(DbContextOptions<HotelContext> options) :base(options)
         { 
-        
+            
         }
         #endregion
         
@@ -25,5 +25,11 @@ namespace HotelMonolitic.Web.Data.Context
         public DbSet<RolUsuario> RolUsuario { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
         #endregion
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<EstadoHabitacion>().ToTable("EstadoHabitacion");
+            modelBuilder.Entity<Habitacion>().ToTable("Habitacion");
+        }
     }
 }

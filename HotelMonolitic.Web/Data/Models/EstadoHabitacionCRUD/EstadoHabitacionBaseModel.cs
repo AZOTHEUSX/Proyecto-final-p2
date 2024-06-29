@@ -8,6 +8,7 @@ namespace HotelMonolitic.Web.Data.Models.EstadoHabitacionCRUD
         public string Descripcion { get; set; }
         public bool Estado {  get; set; }
         
+        
     }
 
     

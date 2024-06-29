@@ -1,5 +1,7 @@
-﻿using HotelMonolitic.Web.Data.Context;
+﻿using HotelMonolitic.BL.Services;
+using HotelMonolitic.Web.Data.Context;
 using HotelMonolitic.Web.Data.DbObjects;
+using HotelMonolitic.Web.Data.Interfaces;
 using HotelMonolitic.Web.Data.Models.EstadoHabitacionCRUD;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -9,26 +11,27 @@ namespace HotelMonolitic.Web.Controllers
 {
     public class EstadoHabitacionController : Controller
     {
-        private readonly IEstadoHabitacionDb EstadoHabitacionServices;
-        
-        public EstadoHabitacionController(IEstadoHabitacionDb estadoHabitacionDb)
-        {
-            this.EstadoHabitacionServices = estadoHabitacionDb;
+        private readonly IEstadoHabitacion estadoHabitaciondb;
 
+        
+
+        public EstadoHabitacionController(IEstadoHabitacion estadoHabitaciondb)
+        {
+            this.estadoHabitaciondb = estadoHabitaciondb;
         }
 
-        
-        // GET: EstadoHabitacionController
+
+        //GET: EstadoHabitacionController
         public ActionResult Index()
         {
-            var estadohabitaciones = this.EstadoHabitacionServices.GetEstadoHabitacion();
-            return View(estadohabitaciones);
+            var esthab = this.estadoHabitaciondb.GetEstadoHabitacion();
+            return View(esthab);
         }
 
         // GET: EstadoHabitacionController/Details/5
         public ActionResult Details(int id)
         {
-            var esthab = this.EstadoHabitacionServices.GetEstadoHabitacion(id);
+            var esthab = this.estadoHabitaciondb.GetEstadoHabitacion(id);
             return View(esthab);
         }
 
@@ -45,14 +48,16 @@ namespace HotelMonolitic.Web.Controllers
         {
             try
             {
-                estadoHabitacionSave.ChangeDate = DateTime.Now;
-                estadoHabitacionSave.ChangeUser = true;
-                this.EstadoHabitacionServices.SaveEstadoHabitacion(estadoHabitacionSave);
-                return RedirectToAction (nameof(Index));
+                //estadoHabitacionSave.ChangeDate = DateTime.Now;
+                //estadoHabitacionSave.ChangeUser = true;
+                this.estadoHabitaciondb.SaveEstadoHabitacion(estadoHabitacionSave);
+                return RedirectToAction(nameof(Index));
             }
 
-            catch
+            catch (Exception ex)
             {
+                var InnerException = ex.InnerException != null ? ex.InnerException.Message : string.Empty;
+                ModelState.AddModelError(string.Empty, $"Error al guardar el EstadoHabitacion {InnerException}");
                 return View();
             }
         }
@@ -60,7 +65,7 @@ namespace HotelMonolitic.Web.Controllers
         // GET: EstadoHabitacionController/Edit/5
         public ActionResult Edit(int id)
         {
-            var esthab = this.EstadoHabitacionServices.GetEstadoHabitacion(id);
+            var esthab = this.estadoHabitaciondb.GetEstadoHabitacion(id);
 
             return View(esthab);
         }
@@ -72,7 +77,7 @@ namespace HotelMonolitic.Web.Controllers
         {
             try
             {
-                this.EstadoHabitacionServices.UpdateEstadoHabitacion(estadoHabitacionUpdate);
+                this.estadoHabitaciondb.UpdateEstadoHabitacion(estadoHabitacionUpdate);
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -94,7 +99,7 @@ namespace HotelMonolitic.Web.Controllers
         {
             try
             {
-                this.EstadoHabitacionServices.RemoveEstadoHabitacion(estadoHabitacionRemove);
+                //this.estadoHabitacionDb.RemoveEstadoHabitacion(estadoHabitacionRemove);
                 return RedirectToAction(nameof(Index));
             }
             catch

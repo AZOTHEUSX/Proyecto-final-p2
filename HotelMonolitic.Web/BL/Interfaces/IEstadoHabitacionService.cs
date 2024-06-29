@@ -1,7 +1,10 @@
 ﻿using HotelMonolitic.Web.Data.Models.EstadoHabitacionCRUD;
 using System;
 
-public interface IEstadoHabitacionServices
+namespace HotelMonolitic.BL.Services
 {
-	List<EstadoHabitacionBaseModel> GetEstadoHabitacion();
+	public interface IEstadoHabitacionService 
+	{
+		List<EstadoHabitacionBaseModel> GetEstadoHabitacion();
+	}
 }

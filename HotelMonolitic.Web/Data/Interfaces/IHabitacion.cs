@@ -2,7 +2,7 @@
 using System;
 
 
-public interface IHabitacionDB
+public interface IHabitacion
 {
 	void SaveHabitacion(HabitacionSaveModel habitacionSave);
 	void UpdateHabitacion(HabitacionUpdateModel habitacionUpdate);

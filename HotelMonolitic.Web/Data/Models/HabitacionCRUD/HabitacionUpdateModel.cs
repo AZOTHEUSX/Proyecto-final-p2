@@ -2,6 +2,6 @@
 {
     public class HabitacionUpdateModel : HabitacionBaseModel
     {
-        public int IdHabitacion {  get; set; }
+        
     }
 }

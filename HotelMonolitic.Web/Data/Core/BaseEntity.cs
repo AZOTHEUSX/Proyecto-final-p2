@@ -12,7 +12,7 @@
 
         public int CreationUser { get; set; }
         public DateTime FechaCreacion{ get; set; }
-        public DateTime? ModifyDate { get; set; }
+        public DateTime? ChangeDate { get; set; }
         public int? Usermod { get; set; }
         public int? UserDeleted { get; set; }
         public DateTime? DeletedDate { get; set; }
