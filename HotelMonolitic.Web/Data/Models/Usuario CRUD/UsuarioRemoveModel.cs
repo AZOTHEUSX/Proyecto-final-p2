@@ -1,6 +1,6 @@
 ﻿namespace HotelMonolitic.Web.Data.Models.Usuario_CRUD
 {
-    public class UsuarioRemoveModel : UsuarioBaseModel
+    public class UsuarioRemoveModel : UsuarioModel
     {
     }
 }

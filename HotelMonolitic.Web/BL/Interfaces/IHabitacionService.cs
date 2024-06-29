@@ -1,8 +1,5 @@
 ﻿using System;
 
-public class UsuarioService
+public interface IHabitacionService
 {
-	public UsuarioService()
-	{
-	}
 }

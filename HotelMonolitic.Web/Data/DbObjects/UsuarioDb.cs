@@ -7,26 +7,6 @@ namespace HotelMonolitic.Web.Data.DbObjects
 {
     public class UsuarioDb : IUsuario
     {
-        private UsuarioModel DatosUsuario(Usuario dtsusuario)
-        {
-            return new UsuarioModel()
-            {
-                NombreCompleto = dtsusuario.NombreCompleto,
-                Correo = dtsusuario.Correo,
-                IdRolUsuario = dtsusuario.IdRolUsuario,
-                UsuarioId = dtsusuario.UsuarioId,
-                Estado = dtsusuario.Estado
-            };
-        }
-
-        private UsuarioSaveModel GuardarDatosUsuario(Usuario usuariosv)
-        {
-            //var usuario = DatosUsuario(usuariosv);
-           // usuario.FechaCreacion = DateTime.Now;
-
-
-        }
-
         private readonly HotelContext context;
         public UsuarioDb(HotelContext context)
         {
@@ -45,21 +25,47 @@ namespace HotelMonolitic.Web.Data.DbObjects
             return DatosUsuario(usuario);
         }
 
-        public void RemoveUsuario(UsuarioRemoveModel usuario)
+        public void RemoveUsuario(UsuarioRemoveModel usuarioDelete)
         {
-            throw new NotImplementedException();
+            var usuario = GuardarDtsUsuario(usuarioDelete);
+            this.context.Usuarios.Remove(usuario);
+            this.context.SaveChanges();
         }
 
-        public void SaveUsuario(UsuarioSaveModel usuarioadd)
+        public void SaveUsuario(UsuarioSaveModel usuarioAdd)
         {
-            //var usuario = GuardarDatosUsuario(usuarioSaveModel);
-            //this.context.Usuarios.Add(usuario);
-            //this.context.SaveChanges();
+            var usuario = GuardarDtsUsuario(usuarioAdd);
+            this.context.Usuarios.Add(usuario);
+            this.context.SaveChanges();
         }
 
-        public void UpdateUsuario(UsuarioUpdateModel usuario)
+
+        public void UpdateUsuario(UsuarioUpdateModel usuarioUpdate)
         {
-            throw new NotImplementedException();
+            var usuario = GuardarDtsUsuario(usuarioUpdate);
+            this.context.Usuarios.Update(usuario);
+            this.context.SaveChanges();
+        }
+
+        private UsuarioModel DatosUsuario(Usuario dtsUsuario)
+        {
+            return new UsuarioModel()
+            {
+                NombreCompleto = dtsUsuario.NombreCompleto,
+                Correo = dtsUsuario.Correo,
+                IdRolUsuario = dtsUsuario.IdRolUsuario,
+                UsuarioId = dtsUsuario.UsuarioId,
+                Estado = dtsUsuario.Estado
+            };
+        }
+
+        private UsuarioSaveModel GuardarDtsUsuario(Usuario dtsUsuario)
+        {
+            var usuario = (UsuarioSaveModel)DatosUsuario(dtsUsuario);
+            usuario.Clave = dtsUsuario.Clave;
+            usuario.FechaCreacion = DateTime.Now;
+
+            return usuario;
         }
     }
 }

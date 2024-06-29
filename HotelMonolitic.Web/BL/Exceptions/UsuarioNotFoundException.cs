@@ -1,8 +1,8 @@
 ﻿using System;
 
-public class UsuarioService
+public class UsuarioNotFoundException
 {
-	public UsuarioService()
+	public UsuarioNotFoundException()
 	{
 	}
 }

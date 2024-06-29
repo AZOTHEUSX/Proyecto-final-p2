@@ -1,10 +1,6 @@
 namespace HotelMonolitic.Web.Data.Models
 {
-    public class UsuarioModel : UsuarioBaseModel
-    {
-
-    }
-    public abstract class UsuarioBaseModel
+    public class UsuarioModel
     {
         public int UsuarioId { get; set; }
         public string? NombreCompleto { get; set; }

@@ -1,8 +1,8 @@
 ﻿using System;
 
-public class UsuarioService
+public class ClienteDTO
 {
-	public UsuarioService()
+	public ClienteDTO()
 	{
 	}
 }
