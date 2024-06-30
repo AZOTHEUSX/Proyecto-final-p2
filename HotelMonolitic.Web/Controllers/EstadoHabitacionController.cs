@@ -48,8 +48,8 @@ namespace HotelMonolitic.Web.Controllers
         {
             try
             {
-                //estadoHabitacionSave.ChangeDate = DateTime.Now;
-                //estadoHabitacionSave.ChangeUser = true;
+                estadoHabitacionSave.ChangeDate = DateTime.Now;
+                estadoHabitacionSave.ChangeUser = true;
                 this.estadoHabitaciondb.SaveEstadoHabitacion(estadoHabitacionSave);
                 return RedirectToAction(nameof(Index));
             }

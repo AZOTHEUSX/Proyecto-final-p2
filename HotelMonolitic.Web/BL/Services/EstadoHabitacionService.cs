@@ -3,7 +3,7 @@ using System;
 
 //namespace HotelMonolitic.BL.Services
 //{
-//    public interface EstadoHabitacionService : IEstadoHabitacionService    
+//    public interface EstadoHabitacionService : IEstadoHabitacionService
 //    {
 //        List<EstadoHabitacionBaseModel> GetEstadoHabitacion();
 //    }
@@ -13,7 +13,7 @@ using System;
 //        List<EstadoHabitacionBaseModel> GetEstadoHabitacion();
 //    }
 
-//    public class EstadoHabitacionServices 
+//    public class EstadoHabitacionServices
 //    {
 //        private readonly IEstadoHabitacionDb estadoHabitacionDb;
 

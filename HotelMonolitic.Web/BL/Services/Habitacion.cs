@@ -1,9 +1,10 @@
 ﻿using System;
 
-public class HabitacionServices
-{ 	
-	public HabitacionServices()
-	{
+//public class HabitacionServices : IHabitacionServices
+//{
+//	public HabitacionServices
+//    }
+    
 
-	}
-}
+//	}
+//}
