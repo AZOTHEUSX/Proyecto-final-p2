@@ -3,6 +3,7 @@ using System.Data;
 using HotelMonolitic.Web.Data;
 using System;
 using Microsoft.EntityFrameworkCore;
+using HotelMonolitic.Web.Data.Context;
 
 namespace HotelMonolitic.Web.Data.DbObjects
 {

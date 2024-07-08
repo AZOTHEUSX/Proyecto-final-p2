@@ -26,7 +26,7 @@ namespace HotelMonolitic.Web.Data.DbObjects
          
             {
                 IdEstadoHabitacion = e.IdEstadoHabitacion,
-                Descripcion = e.Descripcion,
+                Descripcion = e.Descripcion
 
             })
             .ToList();

@@ -16,20 +16,18 @@ namespace HotelMonolitic.Web.Data.Context
         
         
         #region "Db Sets"
-        public DbSet<Categoria> Categoria { get; set; }
-        public DbSet<Cliente> Cliente { get; set; }
+      
         public DbSet<EstadoHabitacion> EstadoHabitacion { get; set; }
         public DbSet<Habitacion> Habitacion { get; set; }
-        public DbSet<Piso> PISO { get; set; }
-        public DbSet<Recepcion> RECEPCION { get; set; }
-        public DbSet<RolUsuario> RolUsuario { get; set; }
-        public DbSet<Usuario> Usuario { get; set; }
+        
         #endregion
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<EstadoHabitacion>().ToTable("EstadoHabitacion");
-            modelBuilder.Entity<Habitacion>().ToTable("Habitacion");
+            modelBuilder.Entity<EstadoHabitacion>().ToTable("EstadoHabitacion")
+                .HasKey(e => e.IdEstadoHabitacion);
+            modelBuilder.Entity<Habitacion>().ToTable("Habitacion")
+                .HasKey(e => e.IdHabitacion);
         }
     }
 }
